@@ -7,7 +7,7 @@ pipeline {
   environment {
     imagename = "haroon-image"
   }
-  agent any
+ 
   stages {
     agent any
     stage('echos') {
