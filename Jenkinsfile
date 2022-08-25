@@ -1,4 +1,6 @@
-environment {
+
+pipeline {
+  environment {
     imagename = "haroon-image"
     
     dockerImage = ''
@@ -32,3 +34,4 @@ environment {
     }
 
   }
+}
