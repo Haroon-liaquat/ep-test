@@ -1,5 +1,6 @@
 
 pipeline {
+   agent any
   parameters{
     choice(name: 'Version', choices:['1.1.1','1.1.2','1.1.3'], description:'')
     booleanParam(name: 'testing', defaultValue:true, description:'')
@@ -9,7 +10,7 @@ pipeline {
   }
  
   stages {
-    agent any
+   
     stage('echos') {
       steps {
         
