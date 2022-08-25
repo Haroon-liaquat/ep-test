@@ -1,12 +1,15 @@
 
 pipeline {
+  parameters{
+    choice(name: 'Version', choices:['1.1.1','1.1.2','1.1.3'], description:'')
+    booleanParam(name: 'testing', defaultValue:true, description:'')
+  }
   environment {
     imagename = "haroon-image"
-    
   }
   agent any
   stages {
-    
+    agent any
     stage('echos') {
       steps {
         
@@ -32,7 +35,7 @@ pipeline {
       }
     }
     stage('Docker Build container') {
-      agent any
+      
       steps {
         
         dir('../git-dockers') {
