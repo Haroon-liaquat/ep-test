@@ -2,7 +2,7 @@
 pipeline {
   environment {
     imagename = "haroon-image"
-    workspace = WORKSPARE
+    workspace = env.WORKSPACE
   }
   agent any
   stages {
@@ -10,7 +10,7 @@ pipeline {
     stage('echos') {
       steps {
         
-        echo ${workspace}
+        echo "${workspace}"
 
       }
     }
