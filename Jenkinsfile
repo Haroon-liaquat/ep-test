@@ -11,7 +11,9 @@ pipeline {
       steps {
         
         echo "${workspace}"
-
+        echo "${BUILD_NUMBER}"
+        echo "${WORKSPACE_TMP}"
+        echo "${JENKINS_URL}"
       }
     }
 
