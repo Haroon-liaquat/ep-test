@@ -2,11 +2,19 @@
 pipeline {
   environment {
     imagename = "haroon-image"
-    
-    dockerImage = ''
+    workspace = WORKSPARE
   }
   agent any
   stages {
+    
+    stage('echos') {
+      steps {
+        
+        echo ${workspace}
+
+      }
+    }
+
     stage('Cloning Git') {
       steps {
         git([url: 'https://github.com/Haroon-liaquat/ep-test.git', branch: 'main'])
@@ -16,7 +24,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          powershell 'docker build -t haroon-image:latest .'
+          powershell "docker build -t ${imagename}:latest ."
          // powershell 'docker-compose up'
         }
       }
