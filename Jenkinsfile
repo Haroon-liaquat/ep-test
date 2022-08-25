@@ -2,7 +2,7 @@
 pipeline {
   environment {
     imagename = "haroon-image"
-    workspace = env.WORKSPACE
+    
   }
   agent any
   stages {
