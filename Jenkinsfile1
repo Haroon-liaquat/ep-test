@@ -31,7 +31,7 @@ pipeline {
       steps{
         script {
           powershell "docker build -t ${imagename}:latest ."
-          // sh "sudo docker build -t ${imagename}:latest ."
+          //// sh "sudo docker build -t ${imagename}:latest ."
          // powershell 'docker-compose up'
         }
       }
